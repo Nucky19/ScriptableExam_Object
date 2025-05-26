@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryManager : MonoBehaviour
+public class ArmorManager : MonoBehaviour
 {
-    public static InventoryManager instance;
+    public static ArmorManager instance;
     public ScriptableItem[] weapons;
     public Text[] weaponsText;
     public Text[] weaponsPrice;

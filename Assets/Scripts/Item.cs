@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ScriptableItem itemInfo;
+    public SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Awake(){
+        spriteRenderer=GetComponent<SpriteRenderer>();
+    }
+    void OnTriggerEnter2D(Collider2D collider){
+        if(itemInfo.itemType=="item")InventoryManager.instance.AddItem(itemInfo);
+        else if(itemInfo.itemType=="armor")ArmorManager.instance.AddItem(itemInfo);
+        Destroy(gameObject);
     }
 }
